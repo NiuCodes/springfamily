@@ -8,7 +8,7 @@ eureka:
   # 表示是否从Eureka Server获取注册信息,默认为true,因为这是一个单点的Eureka Server,不需要同步其他的Eureka Server节点的数据
     fetch-registry: false
     #表示是否将自己注册到Eureka Server,默认为true,由于当前应用就是Eureka Server,故而设为false
-    register-with-eureka: true
+    register-with-eureka: false
     service-url:
         defaultZone: http://admin:eureka@localhost:8761/eureka
         #defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
