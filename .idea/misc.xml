@@ -4,8 +4,9 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/../springfamily/pom.xml" />
-        <option value="$PROJECT_DIR$/../springfamily/springcloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/../springfamily/springcloud-order/pom.xml" />
       </list>
     </option>
   </component>
