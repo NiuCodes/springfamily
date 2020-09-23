@@ -6,11 +6,10 @@
         <groupId>com.nkx</groupId>
         <artifactId>spring-family</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nkx</groupId>
     <artifactId>springcloud-eureka</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>springcloud-eureka</name>
     <description>Architecture for the first time</description>
 

@@ -9,10 +9,10 @@ eureka:
     service-url:
       defaultZone: http://admin:eureka@localhost:8761/eureka
   instance:
-      instance-id: springcloud-order #	页面Status显示昵称
+      instance-id: ${spring.cloud.client.ip-address}:${server.port} #页面Status显示昵称
       prefer-ip-address: true #显示IP 而非主机名称
-      lease-renewal-interval-in-seconds: 2 #设置心跳的时间间隔 默认30s
-      lease-expiration-duration-in-seconds: 5 # 多长时间没收到心跳就清除这个实例 默认90s
+      lease-renewal-interval-in-seconds: 30 #设置心跳的时间间隔 默认30s
+      lease-expiration-duration-in-seconds: 90 # 多长时间没收到心跳就清除这个实例 默认90s
 info:
   app.name: springcloud-order
   company.name: NiuShi group
