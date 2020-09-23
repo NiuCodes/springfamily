@@ -21,3 +21,4 @@ spring:
     user:
       name: admin
       password: eureka
+
