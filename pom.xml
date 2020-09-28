@@ -19,7 +19,7 @@
     <modules>
         <module>springcloud-eureka</module>
         <module>springcloud-order</module>
-
+        <module>springcloud-ribbon</module>
     </modules>
 
     <properties>
