@@ -20,6 +20,7 @@
         <module>springcloud-eureka</module>
         <module>springcloud-order</module>
         <module>springcloud-ribbon</module>
+        <module>springcloud-feign</module>
     </modules>
 
     <properties>
@@ -60,6 +61,10 @@
         </resources>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>

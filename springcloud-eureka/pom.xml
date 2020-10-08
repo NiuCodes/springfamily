@@ -11,6 +11,7 @@
     <artifactId>springcloud-eureka</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>springcloud-eureka</name>
+    <packaging>jar</packaging>
     <description>Architecture for the first time</description>
 
     <dependencies>
@@ -44,12 +45,13 @@
 
 
     <build>
-        <plugins>
+        <finalName>springcloud-eureka</finalName>
+     <!--   <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-        </plugins>
+        </plugins>-->
     </build>
 
 </project>

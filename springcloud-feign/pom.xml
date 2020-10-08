@@ -52,6 +52,8 @@
 
 	</dependencies>
 
-
+	<build>
+		<finalName>springcloud-feign</finalName>
+	</build>
 
 </project>
