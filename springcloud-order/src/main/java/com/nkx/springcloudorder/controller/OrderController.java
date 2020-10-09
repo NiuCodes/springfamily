@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
   @RequestMapping("creatOrderNum")
-  public Long creatOrderNum(){
+  public Long creatOrderNum(Boolean flag){
+    if (flag){
+      new RuntimeException("provider exception");
+    }
     return new Random().nextLong();
-
   }
 }

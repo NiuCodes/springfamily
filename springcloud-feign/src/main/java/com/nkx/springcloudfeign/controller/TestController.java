@@ -12,7 +12,7 @@ public class TestController {
   private OrderClient orderClient;
 
   @RequestMapping("tets")
-  public Long test(){
-    return orderClient.creatOrderNum();
+  public Long test(Boolean flag){
+    return orderClient.creatOrderNum(flag);
   }
 }

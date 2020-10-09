@@ -13,6 +13,9 @@ eureka:
     prefer-ip-address: true #显示IP 而非主机名称
     lease-renewal-interval-in-seconds: 30 #设置心跳的时间间隔 默认30s
     lease-expiration-duration-in-seconds: 90 # 多长时间没收到心跳就清除这个实例 默认90s
+feign:
+  hystrix:
+    enabled: true
 info:
   app.name: springcloud-feign
   company.name: NiuShi group
