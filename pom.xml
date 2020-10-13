@@ -21,6 +21,8 @@
         <module>springcloud-order</module>
         <module>springcloud-ribbon</module>
         <module>springcloud-feign</module>
+        <module>springcloud-dashboard</module>
+        <module>springcloud-turbine</module>
     </modules>
 
     <properties>

@@ -16,6 +16,16 @@ eureka:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 # 请求超时时间
+      circuitBreaker:
+        requestVolumeThreshold: 3  #Error three times into the circuit breaker
+        sleepWindowInMilliseconds: 5000 # 短路多久以后开始尝试是否恢复，默认5s
 info:
   app.name: springcloud-feign
   company.name: NiuShi group

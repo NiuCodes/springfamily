@@ -13,6 +13,7 @@ public class TestController {
 
   @RequestMapping("tets")
   public Long test(Boolean flag){
+    System.out.println("================"+ flag);
     return orderClient.creatOrderNum(flag);
   }
 }
