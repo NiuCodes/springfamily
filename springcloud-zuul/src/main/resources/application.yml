@@ -1,0 +1,19 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:eureka@localhost:8761/eureka
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} #页面Status显示昵称
+    prefer-ip-address: true #显示IP 而非主机名称
+    lease-renewal-interval-in-seconds: 30 #设置心跳的时间间隔 默认30s
+    lease-expiration-duration-in-seconds: 90 # 多长时间没收到心跳就清除这个实例 默认90s
+zuul:
+　　ignoredServices: '*'
+
+
