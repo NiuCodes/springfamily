@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: springcloud-zuul
+  servlet:
+    multipart:
+      max-file-size: 4000MB
+      max-request-size: 4000MB  # 如果通过网广上传文件报文件过大 1.设置zull 网关上传文件的大小(2.要么设置使用zuul的默认网端点来绕过servlet的
+                                # :http://localhost:9001/zuul/zuul-fileupload/file/upload)
 eureka:
   client:
     register-with-eureka: true
@@ -14,6 +19,25 @@ eureka:
     lease-renewal-interval-in-seconds: 30 #设置心跳的时间间隔 默认30s
     lease-expiration-duration-in-seconds: 90 # 多长时间没收到心跳就清除这个实例 默认90s
 zuul:
-　　ignoredServices: '*'
+  routes:
+    use-routing:
+      serviceId: springcloud-order
+      path: /order/**    #通过指定微服务名称 映射路径
+  ignored-services: '*' # 关闭通过微服务实例名称进行访问
+  ignored-patterns: /**/admin/** #过滤敏感路径
+  sensitive-headers: '' #设置敏感头信息，如果不设置，无法获取cookie 信息
+  SendResponseFilter:
+    post:
+      disable: false #禁用某个过滤器 true 禁用
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000   # 设置文件上传时的超时时间
+ribbon:
+  ConnectTimeout: 100000
+  ReadTimeout: 100000
 
 
