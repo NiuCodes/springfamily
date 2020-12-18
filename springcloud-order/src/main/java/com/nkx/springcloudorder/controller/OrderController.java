@@ -7,17 +7,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("order")
 public class OrderController {
 
   @RequestMapping("creatOrderNum/{flag}")
-  public Long creatOrderNum(@PathVariable(value = "flag") Boolean flag){
+  public Long creatOrderNum(@PathVariable(value = "flag") Boolean flag) {
     System.out.println("=============order========" + flag);
-    if (flag){
+    if (flag) {
       throw new RuntimeException("provider exception");
     }
     return new Random().nextLong();
   }
+
+  @RequestMapping("hello")
+  public String foo() {
+    return "hello world";
+  }
+
 }
