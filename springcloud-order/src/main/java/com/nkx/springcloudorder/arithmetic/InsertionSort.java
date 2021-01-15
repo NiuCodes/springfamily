@@ -10,7 +10,7 @@ public class InsertionSort {
    * @param args
    */
   public static void main(String[] args) {
-    int a[] = { 7, 9, 6 };
+    int a[] = {5,8,6,2,3,7,4,9 };   //升序
     int n = a.length;
     //这里面会有几层循环 2
     //时间复杂度：n^2
@@ -33,7 +33,5 @@ public class InsertionSort {
       }
       System.out.println();
     }
-    //	}
-
   }
 }
