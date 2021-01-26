@@ -32,7 +32,7 @@ public class Djstl {
 			int v = cin.nextInt(); // xx yy v表示从xx到yy有一条路 长度是v
 			value[xx][yy] = v;
 			// dis其实在第一个点时候可以在这里计算
-			if (xx == x) {
+			if (xx == x) {     //横坐标相同，纵坐标就是起点到该点的距离
 				dis[yy] = v;
 			}
 		}
@@ -60,6 +60,7 @@ public class Djstl {
 			//只需要关注 我们加进来的点 能有哪些路径就可以了，不用扫描所有的dis 最好的情况应该可以达到o(nlogn),最坏的情况才是O(n^2)
 			for (int i = 1; i <= n; i++) {
 				if (value[loc][i] != -1 && (dis[loc] + value[loc][i] < dis[i])) {
+					System.out.println("1-" + i + "路径为" + loc + "---" + i );
 					dis[i] = dis[loc] + value[loc][i];
 				}
 			}
