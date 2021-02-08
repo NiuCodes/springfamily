@@ -3,7 +3,7 @@ package com.nkx.springcloudorder.datactructure.Tree;
 import java.util.Arrays;
 
 /**
- * 建堆：从最后一个非叶子节点堆化
+ * 建堆：从最后一个非叶子节点堆化     len / 2 - 1
  * delete 删除其实就是把要删除的节点和最后一个节点做交换，然后从下往上进行堆化，把最后一个节点删除即可
  * insert 插入就是堆化的过程
  * 堆排序：把最后一个节点和堆顶进行交换，然后进行堆化，这样每次就可以末尾的数字就是最大的，以此类推，和倒数第二个进行交换，然后进行堆化
@@ -22,7 +22,7 @@ public class HeapSort {
 		while (son < end) {
 			int temp = son;
 			// 比较左右节点和父节点的大小
-			if (son + 1 < end && data[son] < data[son + 1]) { // 表示右节点比左节点到
+			if (son + 1 < end && data[son] < data[son + 1]) { // 表示右节点比左节点大
 				temp = son + 1; // 就要换右节点跟父节点
 			}
 			// temp表示的是 我们左右节点大的那一个

@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class MegrSort {
   //归并排序
   public static void main(String[] args) {
-		fo();
     int data[] = { 9, 5, 6, 8, 0, 3, 7, 1, 10, 4 };
     megerSort(data, 0, data.length - 1);
     System.out.println(Arrays.toString(data));
@@ -17,9 +16,9 @@ public class MegrSort {
     if (left < right) { // 相等了就表示只有一个数了 不用再拆了
       int mid = (left + right) / 2;
       megerSort(data, left, mid);
-      megerSort(data, mid + 1, right);
+      megerSort(data, mid + 1, right);            //分的时候是logN
       // 分完了 接下来就要进行合并，也就是我们递归里面归的过程
-      meger(data, left, mid, right);
+      meger(data, left, mid, right);                  //合并的时候是N      结合起来就是NlogN
     }
   }
 

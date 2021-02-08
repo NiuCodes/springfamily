@@ -1,5 +1,8 @@
 package com.nkx.springcloudorder.datactructure.Tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class MyTreeNode{
 	
 	private char data;
@@ -91,4 +94,5 @@ public class BinaryTree {
 		}
 		print(root);
 	}
+
 }

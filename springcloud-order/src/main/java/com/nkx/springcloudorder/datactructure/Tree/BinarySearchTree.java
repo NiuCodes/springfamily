@@ -138,6 +138,7 @@ public class BinarySearchTree {
 		return pre; // 因为cur会变成null，实际我们是要cur的上一个点，所以就是pre来代替
 	}
 
+	//todo 后继节点:右边第一个比父节点大的数，并且后继节点的左子树一定为空
 	public BinaryNode remove(BinaryNode root, int data) { // 删除datal
 		BinaryNode delNode = find(root, data);
 		if (delNode == null) {
