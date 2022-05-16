@@ -23,6 +23,7 @@
         <module>springcloud-feign</module>
         <module>springcloud-dashboard</module>
         <module>springcloud-turbine</module>
+        <module>springcloud-zuul</module>
     </modules>
 
     <properties>
