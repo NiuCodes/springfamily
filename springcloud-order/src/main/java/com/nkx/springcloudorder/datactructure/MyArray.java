@@ -19,12 +19,20 @@ public class MyArray {
    * @param n   element
    */
   public void insert(int loc, int n) {
-    if (loc++ < size) {
+    if (index++ < size) {
       for (int i = size - 1; i > loc; i--) {
         data[i] = data[i - 1];
       }
       data[loc] = n;
-      index ++;
+    }else{
+      //扩容 会把size*2
+      int[] newData = new int[this.size * 2];
+      for (int i = 0; i < size; i++) {
+        newData[i] = data[i];
+      }
+      this.data = newData;
+      this.size = this.size * 2;
+      insert(loc,n);
     }
   }
 
