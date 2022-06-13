@@ -20,8 +20,8 @@ public class BubbleSort {
 		int data[] = { 4, 5, 6, 3, 2, 1 };
 		int n = data.length;
 
-		//1 2
-		for (int i = 0; i < n - 1; i++) {	//排序的次数
+		//优化点： 加一个flag 参数，如果数列本来就是有序的，那就不需要交换，所以外面的循环就不需要执行
+		for (int i = 0; i < n - 1; i++) {	//排序的次数  为什么是n-1 不是n ,因为n个数只需要比较（n-1）次，最后一个数不需要比较了
 			boolean flag = false;
 			for (int j = 0; j < n - 1 - i; j++) {	//具体冒泡 n - 1 - i,6,5,4,3,2,1
 				if (data[j] > data[j + 1]) {
