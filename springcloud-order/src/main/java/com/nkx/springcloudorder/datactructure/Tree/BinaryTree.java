@@ -3,6 +3,10 @@ package com.nkx.springcloudorder.datactructure.Tree;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 二叉搜索树：左节点小于根节点，右节点大于根节点
+ * 完全二叉树：除了最后一层，其他层每个节点都是满的且最后一层的节点都要靠左排列。
+ */
 class MyTreeNode{
 	
 	private char data;
