@@ -1,8 +1,11 @@
 package com.nkx.springcloudorder.datactructure.map;
 
-import java.util.Scanner;
+import com.google.common.collect.Maps;
+
+import java.util.*;
 
 /**
+ * 什么是图：图（Graph）是一种非线性数据结构。可以说它是一种比较复杂的数据结构，它比树还要复杂。因为图没有层的概念，它们之间的任意元素都可能产生关系
  * Depth First Search 深度遍历（不撞南墙不回头算法） 适用于 求最短路径
  */
 public class DFS {
@@ -18,6 +21,9 @@ public class DFS {
 	boolean mark[][]; // 标记数据 走过的位置
 	int next[][] = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 
+	private Stack<Point> stack = new Stack();
+
+	private Map<Integer,Stack<Point>> map = new HashMap();
 	public DFS(int n, int m, int dx, int dy, int[][] data, boolean[][] mark) {
 		this.n = n;
 		this.m = m;
@@ -31,6 +37,9 @@ public class DFS {
 		if (x == dx && y == dy) {		//枚举了所有的路径
 			if (step < minStep)
 				minStep = step;
+			if (!map.containsKey(minStep)){
+				map.put(minStep,stack);
+			}
 			return;
 		}
 		for (int i = 0; i < 4; i++) {
@@ -41,9 +50,25 @@ public class DFS {
 			if (data[nextx][nexty] == 0 && !mark[nextx][nexty]) { // 表示可以走 每个点都有4个方向，
 				// 这里有三行代码
 				mark[nextx][nexty] = true;
+				Point newPoint = new Point();
+				newPoint.x = nextx;
+				newPoint.y = nexty;
+				stack.push(newPoint);
 				dfs(nextx, nexty, step + 1);
+				stack.pop();
 				// 回溯
 				mark[nextx][nexty] = false;
+
+			}
+		}
+	}
+
+	public void print(){
+		Iterator<Map.Entry<Integer, Stack<Point>>> iterator = map.entrySet().iterator();
+		while(iterator.hasNext()){
+			Stack<Point> value = iterator.next().getValue();
+			while (!value.empty()){
+				System.out.println(value.pop());
 			}
 		}
 	}
@@ -70,6 +95,10 @@ public class DFS {
 		DFS dfs = new DFS(n, m, dx, dy, data, mark);
 		dfs.dfs(x, y, 0);
 		System.out.println(dfs.minStep);
+
+		dfs.print();
+
+
 	}
 }
 /*
