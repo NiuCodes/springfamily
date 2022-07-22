@@ -18,6 +18,9 @@ class BinaryNode {
 
 }
 
+/**
+ * 二叉搜索树弊端，如果插入二叉树的数据是递增的，那么二叉树就会蜕变为链表（logN->N）
+ */
 public class BinarySearchTree {
 
 	public BinaryNode find(BinaryNode root, int key) {
@@ -138,7 +141,14 @@ public class BinarySearchTree {
 		return pre; // 因为cur会变成null，实际我们是要cur的上一个点，所以就是pre来代替
 	}
 
-	//todo 后继节点:右边第一个比父节点大的数，并且后继节点的左子树一定为空
+	/**
+	 * 分三种情况：
+	 * 1.要删除的结点是叶子结点 O(1)
+	 * 2.要删除的结点只有一个子树（左或者右）O(1)
+	 * 3.要删除的结点有两颗子树：找后继结点，而且后继结点的左子树一定为空。
+	 */
+	//todo 后继节点:右边第一个（比如父节点为8，那么他的后继节点为9或者和8挨的最近（10，11，12））比父节点大的数，并且后继节点的左子树一定为空(why)
+	//因为二叉搜索树的性质是左节点一定小于根节点，右节点一定大于根节点，如果后继节点的左子树不为空，那么左子树肯定小于后继节点，他就不是第一个比父节点大的数
 	public BinaryNode remove(BinaryNode root, int data) { // 删除datal
 		BinaryNode delNode = find(root, data);
 		if (delNode == null) {
