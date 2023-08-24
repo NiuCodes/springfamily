@@ -87,7 +87,15 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
+
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+
+    </repositories>
 
 </project>
